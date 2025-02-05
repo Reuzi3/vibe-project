@@ -1,0 +1,464 @@
+/* Garante que html/body preencham toda a tela, evitando cortes */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  overflow-x: hidden; /* Evita rolagem horizontal */
+  transition: opacity 0.2s ease;
+}
+
+/*
+  Fundo gradiente predominantemente preto,
+  começando em #181818, variando para #0f0f0f e retornando a #181818,
+  criando um visual moderno e escuro.
+*/
+body {
+  background: linear-gradient(180deg, #1b1b1b 0%, #131212 50%, #1b1b1b 100%);
+  position: relative;
+  min-height: 100vh;
+}
+
+/*
+  Estrelas menores (0.8px), porém menos numerosas,
+  piscando com animação "twinkle" a cada 3s.
+*/
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  /*
+    Duas camadas de radial-gradient:
+    - #ffffff 0.8px => estrelinhas de 0.8px
+    - background-size aumentado => menos estrelas por área
+  */
+  background-image:
+    radial-gradient(#ffffff 0.8px, transparent 0.8px),
+    radial-gradient(#ffffff 0.8px, transparent 0.8px);
+
+  /* 
+    Ajustamos para 180px / 240px para reduzir a quantidade de estrelas. 
+    Quanto maior o size, menos repetição, logo menos estrelas.
+  */
+  background-size: 180px 180px, 240px 240px;
+  background-position: 0 0, 90px 90px;
+
+  pointer-events: none;
+  z-index: -1;
+
+  /* Animação de piscar suave */
+  animation: twinkle 3s infinite ease-in-out alternate;
+}
+
+/* Keyframes: opacidade de 0.1 a 0.3 */
+@keyframes twinkle {
+  0%   { opacity: 0.1; }
+  100% { opacity: 0.3; }
+}
+
+
+
+/* Container geral */
+.homepage {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* Reduzido de 40px para 20px para aproximar do topo */
+  padding: 25px 0;
+}
+
+/* Logo */
+.logo {
+  max-width: 272px;
+  height: auto;
+  transition: max-width 0.3s ease;
+}
+
+/* Navbar Desktop */
+.navbar-desktop {
+  display: block;
+}
+
+.navbar-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.login-button,
+.register-button {
+  border: none;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button {
+  background-color: #ffffff;
+  color: #0b1033;
+}
+.login-button:hover {
+  background-color: #eaeaea;
+}
+
+.register-button {
+  background-color: #08a0f8bd;
+  color: white;
+}
+.register-button:hover {
+  background-color: #3aa7c2;
+}
+
+/* Navbar Mobile */
+.navbar-mobile {
+  display: none;
+}
+
+/* Botão Hamburger (na navbar) */
+.hamburger-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+  position: relative;
+}
+
+.hamburger-icon {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: white;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.hamburger-icon::before,
+.hamburger-icon::after {
+  content: '';
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  transition: transform 0.2s ease;
+}
+
+.hamburger-icon::before {
+  top: -8px;
+}
+
+.hamburger-icon::after {
+  top: 8px;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  gap: 1rem;
+  height: 100vh;
+  width: calc(100% - 2rem);
+  max-width: 304px;
+  position: fixed;
+  top: 0;
+  right: -0.5rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateX(100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Botão de fechar dentro do menu mobile (close button) */
+.mobile-menu .close-button {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
+.mobile-menu .close-button .hamburger-icon {
+  width: 25px;
+  height: 2px;
+  background-color: white;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.mobile-menu .close-button .hamburger-icon::before,
+.mobile-menu .close-button .hamburger-icon::after {
+  content: '';
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  transition: transform 0.2s ease;
+}
+
+.mobile-menu .close-button .hamburger-icon::before {
+  top: -8px;
+}
+
+.mobile-menu .close-button .hamburger-icon::after {
+  top: 8px;
+}
+
+/* Transforma o ícone em "X" quando o botão de fechar estiver ativo */
+.mobile-menu .close-button.close .hamburger-icon {
+  background-color: transparent;
+}
+.mobile-menu .close-button.close .hamburger-icon::before {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.mobile-menu .close-button.close .hamburger-icon::after {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* CONTEÚDO PRINCIPAL */
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  /* Reduzido o margin para aproximar tudo do topo */
+  margin: 0;
+}
+
+.main-text {
+  flex: 1;
+  text-align: left;
+  padding-right: 100px;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+.highlight {
+  color: #87ceeb;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+/* Aumentando o bold do strong dentro de <p> */
+p strong {
+  font-weight: 700;
+}
+
+/* Botão principal */
+.cta-button {
+  background-color: #08a0f8bd;
+  color: white;
+  padding: 20px 50px;
+  font-size: 18px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  /* Para aproximar mais do texto, reduzindo alguma margem superior */
+  margin-top: 10px;
+}
+
+.cta-button:hover {
+  background-color: #3aaec2;
+}
+
+/* Image Section */
+.image-section {
+  flex: 1;
+  margin-left: 91px;
+  margin-top: 42px;
+}
+
+.streamer-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Parceiros */
+.partners {
+  margin-top: 70px;
+  text-align: center;
+}
+
+.partners h3 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.partners-logos {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.partners-logos img {
+  max-width: 120px;
+  height: auto;
+}
+
+/* Botão WhatsApp fixo no canto inferior direito */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.whatsapp-button img {
+  height: 50px;
+}
+
+/* ================================
+   RESPONSIVIDADE ATÉ 998px
+================================ */
+@media screen and (max-width: 998px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0; /* Dá um pequeno espaço vertical no mobile */
+  }
+
+  .main-text {
+    padding-right: 0;
+    margin-top: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .cta-button {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  .image-section {
+    margin-left: 0;
+    margin-top: 35px;
+  }
+
+  .partners {
+    margin-top: 80px;
+  }
+
+  .partners-logos {
+    flex-wrap: wrap;
+  }
+}
+
+/* ================================
+   RESPONSIVIDADE ATÉ 768px
+================================ */
+@media screen and (max-width: 768px) {
+  .navbar-desktop {
+    display: none;
+  }
+  .navbar-mobile {
+    display: block;
+  }
+  .logo {
+    max-width: 50px;
+  }
+}
+
+/* Oculta o menu mobile em telas maiores que 768px */
+@media screen and (min-width: 768px) {
+  .mobile-menu {
+    display: none !important;
+  }
+}
+
+/* Exemplo de estilos para melhorar legibilidade (opcional) */
+.improved-text {
+  font-size: 1.125rem;  
+  line-height: 1.7;
+  font-weight: 600;  
+  color: #f1f1f1; 
+  letter-spacing: 0.02em; 
+}
+
+@media screen and (max-width: 768px) {
+  .improved-text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+
+
+.extra-info {
+  margin-top: 80px; 
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 18px;   /* padrão em telas grandes */
+  line-height: 1.6;
+  color: #f1f1f1;
+  padding: 0 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .extra-info {
+    font-size: 16px; /* diminui no mobile */
+    line-height: 1.5;
+    margin-top: 30px;
+  }
+}
+
+
+.extra-info p {
+  font-size: 28px;
+  line-height: 1.6;
+}
