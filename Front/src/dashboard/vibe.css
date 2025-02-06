@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    all: unset !important; /* Remove quase todos os estilos herdados */
+    font-family: 'Myriad Pro', sans-serif;
+}
+
+.vibe-container {
+    display: flex;
+    height: 100vh; /* Garante que o contêiner cubra toda a altura da viewport */
+    width: 100%;
+    background-color: #128e08;
+    position: relative;
+}
+
+.vibe-sidebar {
+    width: 60px; /* Largura inicial do menu lateral */
+    background-color: gray;
+    color: #fff;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: width 0.3s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1000; /* Garante que o menu fique acima do conteúdo */
+}
+
+.vibe-sidebar:hover {
+    width: 200px; /* Largura do menu lateral ao passar o mouse */
+}
+
+.vibe-sidebar nav ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.vibe-sidebar nav ul li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.vibe-sidebar nav ul li i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.vibe-sidebar nav ul li .menu-text {
+    display: none;
+    white-space: nowrap;
+}
+
+.vibe-sidebar:hover nav ul li .menu-text {
+    display: inline;
+}
+
+.vibe-content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 60px; /* Espaço para o menu lateral fechado */
+}
+
+.informacoes{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.vibe-header .bi-person-circle {
+    display: flex;
+    gap: 10px;
+    font-size: 2rem; /* Aumenta o tamanho do ícone */
+}
+
