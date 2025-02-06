@@ -1,12 +1,20 @@
 import React from "react";
-import Homepage from "./components/Homepage"; // Importando Homepage
-import "./App.css"; // Estilos globais (se necessário)
+import { Routes, Route } from "react-router-dom";
+
+import Homepage from "./components/Homepage"; 
+import Vibe from "./dashboard/vibe";
+
+import "./App.css"; // Estilos globais (opcional)
 
 function App() {
   return (
-    <div className="App">
-      <Homepage /> {/* Renderizando Homepage */}
-    </div>
+    <Routes>
+      {/* Rota para a página inicial */}
+      <Route path="/" element={<Homepage />} />
+
+      {/* Rota para /dashboard que renderiza Vibe */}
+      <Route path="/dashboard" element={<Vibe />} />
+    </Routes>
   );
 }
 
