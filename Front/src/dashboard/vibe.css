@@ -5,7 +5,7 @@
 }
 
 body {
-    all: unset !important; /* Remove quase todos os estilos herdados */
+    
     font-family: 'Myriad Pro', sans-serif;
 }
 
