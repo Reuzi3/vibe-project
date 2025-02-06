@@ -4,19 +4,18 @@ html, body {
   padding: 0;
   width: 100%;
   height: 100%;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif; /* Fonte moderna e altamente legível */
   color: #fff;
   overflow-x: hidden; /* Evita rolagem horizontal */
   transition: opacity 0.2s ease;
 }
 
 /*
-  Fundo gradiente predominantemente preto,
-  começando em #181818, variando para #0f0f0f e retornando a #181818,
+  Fundo gradiente predominantemente preto com azul,
   criando um visual moderno e escuro.
 */
 body {
-  background: linear-gradient(180deg, #1b1b1b 0%, #131212 50%, #1b1b1b 100%);
+  background: linear-gradient(180deg, #0a0a0a 0%, #0a1a2a 50%, #0a0a0a 100%);
   position: relative;
   min-height: 100vh;
 }
@@ -39,8 +38,8 @@ body::before {
     - background-size aumentado => menos estrelas por área
   */
   background-image:
-    radial-gradient(#ffffff 0.8px, transparent 0.8px),
-    radial-gradient(#ffffff 0.8px, transparent 0.8px);
+    radial-gradient(#ffffff17 0.8px, transparent 0.8px),
+    radial-gradient(#ffffff33 0.8px, transparent 0.8px);
 
   /* 
     Ajustamos para 180px / 240px para reduzir a quantidade de estrelas. 
@@ -62,8 +61,6 @@ body::before {
   100% { opacity: 0.3; }
 }
 
-
-
 /* Container geral */
 .homepage {
   max-width: 1200px;
@@ -78,8 +75,6 @@ body::before {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  /* Reduzido de 40px para 20px para aproximar do topo */
   padding: 25px 0;
 }
 
@@ -252,8 +247,6 @@ body::before {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-
-  /* Reduzido o margin para aproximar tudo do topo */
   margin: 0;
 }
 
@@ -296,7 +289,6 @@ p strong {
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s ease;
-  /* Para aproximar mais do texto, reduzindo alguma margem superior */
   margin-top: 10px;
 }
 
@@ -358,7 +350,7 @@ p strong {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin: 20px 0; /* Dá um pequeno espaço vertical no mobile */
+    margin: 20px 0;
   }
 
   .main-text {
@@ -435,8 +427,6 @@ p strong {
   }
 }
 
-
-
 .extra-info {
   margin-top: 80px; 
   max-width: 800px;
@@ -456,7 +446,6 @@ p strong {
     margin-top: 30px;
   }
 }
-
 
 .extra-info p {
   font-size: 28px;
