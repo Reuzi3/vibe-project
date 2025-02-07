@@ -8,16 +8,19 @@ function Vibe() {
         <nav>
           <ul>
             <li>
-              <i className="bi bi-house"></i>
-              <span className="menu-text">Home</span>
+              <i className="bi bi-list"></i> {/* Ícone adicionado */}     
             </li>
             <li>
-              <i className="bi bi-person"></i>
-              <span className="menu-text">Seller</span>
-            </li>
-            <li>
-              <i className="bi bi-speedometer2"></i>
+              <i className="bi bi-clipboard-data"></i>
               <span className="menu-text">Dashboard</span>
+            </li>
+            <li>
+              <i className="bi bi-credit-card-fill"></i>
+              <span className="menu-text">Transações</span>
+            </li>
+            <li>
+              <i className="bi bi-cash-coin"></i>
+              <span className="menu-text">Recebimento</span>
             </li>
           </ul>
         </nav>
