@@ -9,18 +9,41 @@ body {
     font-family: "Oswald", serif;
 }
 
+/* Remove todos os estilos dos links */
+a.menu-text {
+    text-decoration: none;
+    /* Remove o sublinhado */
+    color: inherit;
+    /* Herda a cor do texto do elemento pai */
+}
+
+a.menu-text:hover,
+a.menu-text:focus,
+a.menu-text:active {
+    text-decoration: none;
+    /* Remove o sublinhado ao passar o mouse, focar ou clicar */
+    color: inherit;
+    /* Herda a cor do texto do elemento pai */
+}
+
 .vibe-container {
     display: flex;
     height: 100vh;
     width: 100%;
-    background: linear-gradient(to top, rgba(2,0,36,1) 0%, rgba(18,80,150,1) 50%, rgba(18,151,199,1) 100%);
+    background: linear-gradient(to top, rgba(2, 0, 36, 1) 0%, rgba(18, 80, 150, 1) 50%, rgba(18, 151, 199, 1) 100%);
 
     position: relative;
 }
 
+.vibe-dash{
+    margin-bottom: 30px;
+}
+
 .vibe-sidebar {
     width: 60px;
-    /* Largura inicial do menu lateral */background: linear-gradient(90deg, #2C3E50, #4A5568); /* De azul escuro para cinza azulado */
+    /* Largura inicial do menu lateral */
+    background: linear-gradient(90deg, #2C3E50, #4A5568);
+    /* De azul escuro para cinza azulado */
     padding: 20px 0;
     display: flex;
     flex-direction: column;
@@ -32,6 +55,45 @@ body {
     height: 100%;
     z-index: 1000;
     /* Garante que o menu fique acima do conteúdo */
+}
+
+.vibe-quantidade {
+    width: 400px; /* Largura do card */
+    height: 200px; /* Altura do card */
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Sombra suave */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+}
+
+.vibe-quantidade p {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+}
+.cards {
+    display: flex;
+    gap: 210px; /* Espaçamento entre os cards */
+  
+    align-items: center; /* Centraliza os cards verticalmente */
+}
+.vibe-body{
+    display: flex;
+    gap: 400px;
+}
+
+.vibe-quantidade .info {
+    font-size: 14px;
+    color: gray;
+    margin-top: 5px;
+  
 }
 
 .vibe-sidebar:hover {
@@ -86,7 +148,7 @@ body {
 
 .informacoes {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     margin-bottom: 20px;
 }

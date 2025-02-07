@@ -1,42 +1,35 @@
 import React from 'react';
+import Layout from './Layout';
 import './vibe.css';
 
 function Vibe() {
   return (
-    <div className='vibe-container'>
-      <aside className='vibe-sidebar'>
-        <nav>
-          <ul>
-            <li>
-              <i className="bi bi-list"></i> {/* Ícone adicionado */}     
-            </li>
-            <li>
-              <i className="bi bi-clipboard-data"></i>
-              <span className="menu-text">Dashboard</span>
-            </li>
-            <li>
-              <i className="bi bi-credit-card-fill"></i>
-              <span className="menu-text">Transações</span>
-            </li>
-            <li>
-              <i className="bi bi-cash-coin"></i>
-              <span className="menu-text">Recebimento</span>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-      <div className='vibe-content'>
-        <header className='vibe-header'>
-          <div className='informacoes'>
-            <p>Home &gt; Seller &gt; dashboard</p>
-            <i className="bi bi-person-circle"><p>Luiz</p></i> {/* Ícone do Bootstrap */}
-          </div>
+    <Layout>
+      <header className='vibe-header'>
+        <div className='informacoes'>
+          <i className="bi bi-person-circle"><p>Luiz</p></i> {/* Ícone do Bootstrap */}
+        </div>
+        <div>
+          <h2 className='vibe-dash'>Visao Geral</h2>
           <div className='vibe-body'>
-            <h2 className='vibe-dash'>Dashboard</h2>
+            <h2 className="vibe-card">Quantidade de donates</h2>
+            <h2 className='vibe-card'>Receita total</h2>
           </div>
-        </header>
-      </div>
-    </div>
+          <div className='cards'>
+            <div className='vibe-quantidade'>
+              <h3 className=''>10</h3>
+              <h3>0</h3>
+              <p className="">Últimos 30 dias</p>
+            </div>
+            <div className='vibe-quantidade'>
+              <h3 className=''>10</h3>
+              <h3>0</h3>
+              <p className="">Últimos 30 dias</p>
+            </div>
+          </div>
+        </div>
+      </header>
+    </Layout>
   );
 }
 

@@ -13,11 +13,11 @@ function App() {
       <Route path="/" element={<Homepage />} />
 
       {/* Rota para /dashboard que renderiza Vibe */}
-      <Route path="/dashboard" element={<Vibe />} />
+      <Route path="/Dashboard" element={<Vibe />} />
 
       {/* Rotas adicionais para Transações e Recebimento */}
-      <Route path="/transacoes" element={<Transacoes />} />
-      <Route path="/recebimento" element={<Recebimento />} />
+      <Route path="/Transacoes" element={<Transacoes />} />
+      <Route path="/Recebimento" element={<Recebimento />} />
     </Routes>
   );
 }
