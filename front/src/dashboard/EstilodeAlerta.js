@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from './Layout';
 import './vibe.css';
 
-function Vibe() {
+function EstilodeAlerta() {
   return (
     <Layout>
       <header className='vibe-header'>
@@ -33,13 +33,10 @@ function Vibe() {
               </div>
             </div>
           </div>
-          <div className='vibe-grafico'>
-            <p>Boa sorte pra fazer essa merda de Grafico</p>
-          </div>
         </div>
       </main>
     </Layout>
   );
 }
 
-export default Vibe;
+export default EstilodeAlerta;
