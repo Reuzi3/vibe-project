@@ -1,0 +1,340 @@
+.informacoes {
+    display: flex;
+    align-items: center;
+}
+
+.icon-perfil {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.name-donate {
+    width: auto;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.cardzinho {
+    display: flex;
+    gap: 210px;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardzinho-2 {
+    margin-top: 50px;
+    display: flex;
+    gap: 210px;
+    justify-content: center;
+    align-items: center;
+}
+
+.vibe-quantidades {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    height: 90px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+    gap: 30px;
+}
+
+.vibe-quantidades-2 {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    font-family: Arial, sans-serif;
+
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    font-size: 30px;
+}
+
+.sidebar-config {
+    width: 30%;
+    background: white;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+    margin-bottom: 16px;
+}
+
+.file-upload {
+    border: 1px solid #ddd;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+    margin-top: 4px;
+}
+
+.upload-icon {
+    cursor: pointer;
+}
+
+.color-picker {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+}
+
+.save-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.checkout-preview {
+    width: 70%;
+    background: white;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+
+    background-size: cover;
+}
+
+.checkout-content {
+    padding: 16px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.input-field {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.continue-button {
+    width: 100%;
+    margin-top: 16px;
+    padding: 10px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+.chat-form {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.input-1 {
+    width: 330px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #E5E3F2;
+    font-size: 15px;
+}
+
+.input-2 {
+    width: 330px;
+    padding: 12px;
+    border: none;
+    font-size: 15px;
+}
+
+.textarea {
+    margin-top: 50px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #E5E3F2;
+    font-size: 14px;
+
+}
+
+
+
+.textarea {
+    width: 330px;
+    height: 70px;
+    resize: none;
+}
+
+.char-limit,
+.min-value {
+    display: flex;
+    font-size: 12px;
+    color: #666;
+    margin-left: 4px;
+    justify-content: flex-end;
+}
+
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.toggle-input {
+    display: none;
+}
+
+.toggle-slider {
+    width: 40px;
+    height: 20px;
+    background: #ccc;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle-input:checked+.toggle-slider {
+    background: #6D39E0;
+}
+
+.toggle-slider::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 2px;
+    transform: translateY(-50%);
+    transition: 0.3s;
+}
+
+.toggle-input:checked+.toggle-slider::before {
+    left: 22px;
+}
+
+.submit-btn {
+    background: #6D39E0;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+.icon-micro {
+   margin-top: 5px;
+    display: flex;
+    color: #6D39E0;
+    height: 20px;
+    width: 15px;
+    gap: 5px;
+}
+
+.icon-micro-2{
+    margin-top: 5px;
+    display: flex;
+    color: #6D39E0;
+    height: 20px;
+    width: 20px;
+    gap: 5px;
+}
+
+.pf-funciona{
+ 
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.stop-btn, .record-btn {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    font-size: 16px;
+    color: white;
+    background-color: #ff4d4d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .stop-btn:hover, .record-btn:hover {
+    background-color: #ff1a1a;
+  }
+  
+  .record-btn {
+    background-color: #4caf50;
+  }
+  
+  .record-btn:hover {
+    background-color: #45a049;
+  }
+
+  .audio-player {
+    width: 100%;
+    margin-top: 50px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #E5E3F2;
+    font-size: 14px;
+    outline: none;
+}
+.audio-player {
+    width: 100%; /* Ajusta a largura do player para ocupar 100% da div pai */
+    margin-top: 10px; /* Adiciona um espaço acima do player */
+  }
+  
+  .cardzinho-2 .vibe-quantidades-2 {
+    display: flex;
+    flex-direction: column; /* Alinha os elementos verticalmente */
+    align-items: stretch; /* Faz com que os filhos ocupem a largura total */
+  }
+  
+  .stop-btn, .record-btn {
+    width: 100%; /* Ajusta os botões para ocupar 100% da largura disponível */
+    margin-top: 5px; /* Adiciona um espaço entre o player e os botões */
+  }
+  
